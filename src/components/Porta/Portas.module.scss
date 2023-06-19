@@ -6,11 +6,28 @@
     align-items: center;
     padding: 0.5rem;
     background-color:$chocolate-color;
+    flex-grow: 1;
 
-    width: var( --area-porta-altura);
-    height: var(  --area-porta-largura);
+
 }
 
 .number {
     font-size: 3.5rem;
+}
+
+.area{
+    display: flex;
+   
+    width: var( --area-porta-altura);
+    height: var(  --area-porta-largura);
+    margin: 2rem;
+
+}
+.frame{
+display: flex;
+flex-grow: 1;
+border-left:5px solid brown ;
+border-top:5px solid brown ;
+border-right:5px solid brown ;
+height: 25vw;
 }
