@@ -1,12 +1,21 @@
 
 import Portas from '@/components/Porta/Portas'
-import styles from '@/styles/Home.scss'
+import PortaModel from '@/models/PortaModel'
+import { useState } from 'react'
+
 
 export default function Home() {
+  //estado interno no componente
+  const[ p1 , setP1] = useState(new PortaModel(1))
+  
+
   return (
     <div style={{display:"flex" , justifyContent:"center",}} >
-<Portas/>
-<Portas/>
+<Portas  porta={p1} />
+
+
+
+
     </div>
   )
 }

@@ -1,12 +1,17 @@
 @import "../../styles/Colors.scss";
 
 .porta {
+    position: relative;
     display: flex;
+
     flex-direction: column;
     align-items: center;
+
     padding: 0.5rem;
     background-color:$chocolate-color;
     flex-grow: 1;
+    width: 25vh;
+    height: 23vw;
 
 
 }
@@ -17,17 +22,51 @@
 
 .area{
     display: flex;
-   
+    flex-direction: column;
+    align-items: center;
     width: var( --area-porta-altura);
     height: var(  --area-porta-largura);
     margin: 2rem;
+  
 
 }
 .frame{
 display: flex;
 flex-grow: 1;
-border-left:5px solid brown ;
-border-top:5px solid brown ;
-border-right:5px solid brown ;
-height: 25vw;
+flex-wrap: wrap;
+border-left:5px solid $brown ;
+border-top:5px solid $brown ;
+border-right:5px solid $brown ;
+height: 30vw;
+}
+
+/* macaneta da porta*/
+.macaneta {
+    position:absolute;
+   
+    align-self: flex-end;
+    top: 200px;
+    height: 20px;
+    width: 20px ;
+    border-radius: 20px;
+    background-color: $ColorBlack;
+
+
+}
+
+
+.selecionada {
+    border-left:5px solid $yellow ;
+border-top:5px solid $yellow ;
+border-right:5px solid $yellow ;
+}
+
+.selecionada .number {
+    color: $yellow;
+
+}
+
+.selecionada .macaneta{
+    background-color:$yellow;
+
 }
