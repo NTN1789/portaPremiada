@@ -1,0 +1,32 @@
+@import "./Colors.scss";
+#jogo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+
+.portas{
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+   flex-wrap: wrap;
+
+}
+
+.botoes{
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+}
+
+.botoes button{
+ background-color: $red;
+ color: $White;
+ font-size: 2rem;
+ border: none;
+ padding: 10px 25px;
+ cursor: pointer;
+}

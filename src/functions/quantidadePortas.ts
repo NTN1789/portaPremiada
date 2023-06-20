@@ -5,13 +5,13 @@ import PortaModel from "@/models/PortaModel";
 // Array.from({length:10},(,i) => i + 1  ) => vai contar até 10 
 
 
-export function criarPortas(qtde:number,selecionada:number):PortaModel[] {
+export function criarPortas(qtde:number,portaComPresente:number):PortaModel[] {
  
     return Array.from({length:qtde}, (_,i) => {
 
     const numero = i + 1 
     // tem ou não tem presente , se o numero for igual a porta selecionada, vai ter presente 
-  const temPresente = numero === selecionada
+  const temPresente = numero === portaComPresente
 
     return new PortaModel(numero,temPresente)
 
