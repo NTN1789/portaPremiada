@@ -8,12 +8,13 @@ export default class PortaModel {
 
 
 
+
 constructor(numero:Number, temPresente = false, selecionada = false, aberta = false){
     this.#numero = numero;
     this.#temPresente = temPresente;
     this.#selecionada = selecionada;
     this.#aberta = aberta;  
-
+ 
 
 }
 
@@ -34,6 +35,10 @@ get selecionada(){
 
 get aberta(){
     return this.#aberta;
+
+}
+get fechada(){
+    return !this.#aberta;
 
 }
 

@@ -10,8 +10,8 @@
     padding: 0.5rem;
     background-color:$chocolate-color;
     flex-grow: 1;
-    width: 25vh;
-    height: 23vw;
+    width: 100vh;
+    height: 25vw;
 
 
 }
@@ -24,9 +24,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: var( --area-porta-altura);
-    height: var(  --area-porta-largura);
-    margin: 2rem;
+    width: 450px;
+    height: 450px;
+    margin: 5rem;
   
 
 }
@@ -37,7 +37,9 @@ flex-wrap: wrap;
 border-left:5px solid $brown ;
 border-top:5px solid $brown ;
 border-right:5px solid $brown ;
-height: 30vw;
+background-color: black;
+height: 90vh;
+width: 28vh;
 }
 
 /* macaneta da porta*/
