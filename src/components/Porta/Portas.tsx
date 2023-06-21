@@ -16,17 +16,17 @@ export default function Portas(props: PortaProps) {
   // essa arrow  vai receber um event = E , e vai chamar a props com  uma seleção alternada
   // essa seleção alternada já ta feito pelo o models
 
-  const alternarSelecaoDePorta = e => props.onChange(porta.alternarSelecao())
+  const AlternarSelecaoDePorta = e => props.onChange(porta.alternarSelecao())
   // vai alternar o valor sem mexer na propriedade original dela é criar uma nova porta
   
-  const abrir = (e) =>  {
+  const abrir = e =>  {
   e.stopPropagation()  
     props.onChange(porta.abrir())
   // abrir porta
   // selecionar a porta é se abrir ela ,vai embora
   }
   
-  function renderizacaoDePorta() {
+  function RenderizacaoDePorta() {
     return (
 
       <div className={styles.porta}>
@@ -38,12 +38,12 @@ export default function Portas(props: PortaProps) {
 }
 
 return (
-  <div className={styles.area} onClick={alternarSelecaoDePorta}>
+  <div className={styles.area} onClick={AlternarSelecaoDePorta}>
 <div className={`${styles.frame} ${selecionada}`}>
       {
         // a porta está aberta ou não . se tiver a aberta não vai renderizar , caso estiver aberta vai renderizar a div
        porta.fechada ?
-       renderizacaoDePorta() : porta.temPresente ? 
+       RenderizacaoDePorta() : porta.temPresente ? 
           <Presente/> : false
        
        }

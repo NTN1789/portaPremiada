@@ -5,21 +5,35 @@ import styles from "../../../styles/jogo.module.scss"
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-export default function jogo() {
+export default function Jogo() {
   
   const router = useRouter()
-  
-    const [portas,setPort] = useState([])
+  const [valido,setValido] = useState(false);
+    const [portas,setPort] = useState([]);
+
+useEffect(() => {
+    const portas = +router.query.portas     // o + é para convertar para number
+    const temPrese =  +router.query.temPresente
+   
+
+
+    const quantidadePortasValida =  portas >= 3 && portas <= 100 // limitando as portas até 100
+    const temPresenteValido = temPrese >= 1 && temPrese <= portas // limitando o temPresente até a quantidade de portas
+
+    setValido(quantidadePortasValida && temPresenteValido)
+}, [portas]) // sempre que modificar portas vai chamar o valido
+
+
 
 useEffect(() => {
     const portas = +router.query.portas     // o + é para convertar para number
     const temPrese =  +router.query.temPresente
     setPort(criarPortas(portas,temPrese))
 
-}, [router])
+}, [router?.query])
 
     function renderizarPorta() {
-        return portas.map(porta => {
+        return valido && portas.map(porta => {
             return (
                 <>
                     <Portas key={porta.numero}
@@ -37,8 +51,14 @@ useEffect(() => {
     return (
         <div id={styles.jogo} >
     <div className={styles.portas}>
+    { valido ?
+        renderizarPorta()
+        :
+        <h2>valores invalido</h2>
+    }
+        
+     
 
-    {renderizarPorta()}
     </div>
     <div className={styles.botoes}>
         <Link href="/">

@@ -5,7 +5,7 @@ import PortaModel from "@/models/PortaModel";
 // Array.from({length:10},(,i) => i + 1  ) => vai contar até 10 
 
 
-export function criarPortas(qtde:number,portaComPresente:number):PortaModel[] {
+export function CriarPortas(qtde:number,portaComPresente:number):PortaModel[] {
  
     return Array.from({length:qtde}, (_,i) => {
 
